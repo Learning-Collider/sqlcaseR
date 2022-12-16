@@ -104,6 +104,12 @@ A string that represents the constructed CASE WHEN statement
 
 ## Installation
 
+Install using:
+
+```{}
+devtools::install_github("leosonh/sqlcaser")
+```
+
 ## Acknowledgments
 Much thanks to a couple of my colleagues at Learning Collider, Nitya Raviprakash
 and Jasmin Dial, who provided healthy discussion around my misery of
