@@ -7,14 +7,14 @@
 casewhen(inputfile)
 }
 \arguments{
-\item{inputfile}{Path to the mapping file}
+\item{inputfile}{Mapping dataframe OR path to the mapping file}
 }
 \value{
 A string that represents the constructed CASE statement
 }
 \description{
-This function constructs a CASE WHEN THEN statement from a mapping file.
-It assumes that the first column of the mapping file contains the original
-WHEN values, and the second column contains the THEN values (the values
-to be mapped to.)
+This function constructs a CASE WHEN THEN statement from a mapping file or
+dataframe. It assumes that the first column of the mapping data contains the
+original WHEN values, and the second column contains the THEN values (the
+values to be mapped to.)
 }

@@ -13,9 +13,9 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
-**Version 0.1.0**
+**Version 0.1.1**
 
-***Leoson Hoay <br>16 Dec 2022***
+***Leoson Hoay <br>20 Dec 2022***
 
 
 ## Introduction
@@ -59,8 +59,8 @@ CASE WHEN 'Hotel/Motel' THEN 'Living in Shelter/Hotel/Motel'
 library(sqlcaser)
 ```
 
-The package assumes that the user has a mapping CSV file similar to the example
-below: 
+The package assumes that the user has a mapping CSV file or an R dataframe
+similar to the example below: 
 
 ```{r}
 samp <- system.file("extdata", "sample.csv", package = "sqlcaser")
@@ -68,9 +68,9 @@ mapping <- read.csv(samp)
 mapping
 ```
 
-The function **casewhen()** takes the ***file path*** of the mapping file as input, 
-and returns the CASE statement as a string, while printing it to the console
-as well.
+The function **casewhen()** takes an ***R dataframe or the file path of the
+mapping file*** as input,and returns the CASE statement as a string, while printing
+it to the console as well.
 
 ```{r}
 statement <- casewhen(samp)
@@ -97,10 +97,10 @@ samplepath <- system.file("extdata", "sample.csv", package = "sqlcaser")
 
 **description**
 
-This function constructs a CASE WHEN THEN statement from a mapping CSV file.
-It assumes that the first column of the mapping file contains the original
-WHEN values, and the second column contains the THEN values (the values to
-be mapped to.)
+This function constructs a CASE WHEN THEN statement from a mapping CSV file or
+R dataframe It assumes that the first column of the data contains the original
+WHEN values, and the second column contains the THEN values (the values
+to be mapped to.)
 
 **Usage**
 
@@ -108,7 +108,7 @@ casewhen(inputfile)
 
 **Arguments**
 
-*inputfile* Path to the mapping file
+*inputfile* R dataframe or path to the mapping file
 
 **Value**
 

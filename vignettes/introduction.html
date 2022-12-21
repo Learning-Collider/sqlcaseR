@@ -341,8 +341,8 @@ statements for SQL interfaces in R</h1>
 
 
 
-<p><strong>Version 0.1.0</strong></p>
-<p><strong><em>Leoson Hoay <br>16 Dec 2022</em></strong></p>
+<p><strong>Version 0.1.1</strong></p>
+<p><strong><em>Leoson Hoay <br>20 Dec 2022</em></strong></p>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
 <p>This module was born out of my genuine frustration while constructing
@@ -395,8 +395,8 @@ now, but support for other file formats is planned.</p>
 <div id="demonstration" class="section level2">
 <h2>Demonstration</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sqlcaser)</span></code></pre></div>
-<p>The package assumes that the user has a mapping CSV file similar to
-the example below:</p>
+<p>The package assumes that the user has a mapping CSV file or an R
+dataframe similar to the example below:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>samp <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;sample.csv&quot;</span>, <span class="at">package =</span> <span class="st">&quot;sqlcaser&quot;</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>mapping <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(samp)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>mapping</span>
@@ -413,9 +413,10 @@ the example below:</p>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10              Homeless, Doubled-Up                    Doubled Up</span></span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11 Homeless, In Doubled-Up Residence                    Doubled Up</span></span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12             Homeless, Unsheltered                   Unsheltered</span></span></code></pre></div>
-<p>The function <strong>casewhen()</strong> takes the <strong><em>file
-path</em></strong> of the mapping file as input, and returns the CASE
-statement as a string, while printing it to the console as well.</p>
+<p>The function <strong>casewhen()</strong> takes an <strong><em>R
+dataframe or the file path of the mapping file</em></strong> as
+input,and returns the CASE statement as a string, while printing it to
+the console as well.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>statement <span class="ot">&lt;-</span> <span class="fu">casewhen</span>(samp)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; CASE WHEN &#39;Homeless, Hotel/Motel&#39; THEN &#39;Living in Shelter/Hotel/Motel&#39;</span></span>
@@ -460,13 +461,13 @@ be accessed as follows:</p>
 <p><strong><em>casewhen(inputfile)</em></strong></p>
 <p><strong>description</strong></p>
 <p>This function constructs a CASE WHEN THEN statement from a mapping
-CSV file. It assumes that the first column of the mapping file contains
-the original WHEN values, and the second column contains the THEN values
-(the values to be mapped to.)</p>
+CSV file or R dataframe It assumes that the first column of the data
+contains the original WHEN values, and the second column contains the
+THEN values (the values to be mapped to.)</p>
 <p><strong>Usage</strong></p>
 <p>casewhen(inputfile)</p>
 <p><strong>Arguments</strong></p>
-<p><em>inputfile</em> Path to the mapping file</p>
+<p><em>inputfile</em> R dataframe or path to the mapping file</p>
 <p><strong>Value</strong></p>
 <p>A string that represents the constructed CASE statement</p>
 </div>
