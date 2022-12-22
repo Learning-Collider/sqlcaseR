@@ -1,8 +1,8 @@
 # sqlcaseR
 ## sqlcaseR: A long CASE WHEN THEN statement constructor for SQL interfaces in R
-**Version 0.1.1**
+**Version 0.1.2**
 
-***Leoson Hoay <br>20 Dec 2022***
+***Leoson Hoay <br>22 Dec 2022***
 
 
 ## Introduction
@@ -96,6 +96,9 @@ casewhen(inputfile)
 **Arguments**
 
 *inputfile* R dataframe or path to the mapping file
+
+*header* If reading a CSV file, specify TRUE if there is a header row, FALSE if
+there is no header row.
 
 **Value**
 
