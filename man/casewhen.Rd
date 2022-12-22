@@ -4,10 +4,13 @@
 \alias{casewhen}
 \title{Generate a SQL CASE WHEN statement from a mapping file}
 \usage{
-casewhen(inputfile)
+casewhen(inputfile = NULL, header = FALSE)
 }
 \arguments{
 \item{inputfile}{Mapping dataframe OR path to the mapping file}
+
+\item{header}{If reading a csv file, TRUE if the file includes a header row,
+FALSE if it does not include a header row.}
 }
 \value{
 A string that represents the constructed CASE statement
