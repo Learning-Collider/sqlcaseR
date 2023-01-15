@@ -1,5 +1,10 @@
 # *News*
 
+# sqlcaseR 0.1.3 (2023-1-15)
+
+* New function! inlist() creates a SQL IN() list from a CSV file or dataframe
+that includes the values to check for.
+
 # sqlcaseR 0.1.2 (2022-12-22)
 
 * Added header argument to specify if input file has a header row.

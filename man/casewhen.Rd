@@ -2,7 +2,7 @@
 % Please edit documentation in R/casewhen.R
 \name{casewhen}
 \alias{casewhen}
-\title{Generate a SQL CASE WHEN statement from a mapping file}
+\title{Generate a SQL CASE statement from a mapping file}
 \usage{
 casewhen(inputfile = NULL, header = FALSE)
 }
@@ -16,7 +16,7 @@ FALSE if it does not include a header row.}
 A string that represents the constructed CASE statement
 }
 \description{
-This function constructs a CASE WHEN THEN statement from a mapping file or
+This function constructs a CASE..WHEN,,THEN statement from a mapping file or
 dataframe. It assumes that the first column of the mapping data contains the
 original WHEN values, and the second column contains the THEN values (the
 values to be mapped to.)

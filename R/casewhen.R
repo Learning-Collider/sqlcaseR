@@ -1,6 +1,6 @@
-#' Generate a SQL CASE WHEN statement from a mapping file
+#' Generate a SQL CASE statement from a mapping file
 #'
-#' This function constructs a CASE WHEN THEN statement from a mapping file or
+#' This function constructs a CASE..WHEN,,THEN statement from a mapping file or
 #' dataframe. It assumes that the first column of the mapping data contains the
 #' original WHEN values, and the second column contains the THEN values (the
 #' values to be mapped to.)
