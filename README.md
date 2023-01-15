@@ -1,8 +1,8 @@
 # sqlcaseR
 ## sqlcaseR: A long CASE WHEN THEN statement constructor for SQL interfaces in R
-**Version 0.1.2**
+**Version 0.1.3**
 
-***Leoson Hoay <br>22 Dec 2022***
+***Leoson Hoay <br>15 Jan 2023***
 
 
 ## Introduction
@@ -39,6 +39,10 @@ CASE WHEN 'Hotel/Motel' THEN 'Living in Shelter/Hotel/Motel'
  WHEN 'No' THEN 'Not Homeless'
  WHEN 'Homeless, Doubled-Up' THEN 'Doubled Up'
 ```
+
+As of version 0.1.3, the package also supports the creation of long SQL IN()
+lists via the *inlist()* function. This was inspired by reading about Kevin
+Flerlage's [Excel implementation](https://www.flerlagetwins.com/2020/09/in-operator-generator-case-statement.html).  
 
 ## Demonstration
 
@@ -80,7 +84,7 @@ samplepath <- system.file("extdata", "sample.csv", package = "sqlcaser")
 
 ## Functions
 
-***casewhen(inputfile)***
+***casewhen()***
 
 **description**
 
@@ -91,7 +95,32 @@ to be mapped to.)
 
 **Usage**
 
-casewhen(inputfile)
+casewhen(inputfile=NULL, header=FALSE)
+
+**Arguments**
+
+*inputfile* R dataframe or path to the mapping file
+
+*header* If reading a CSV file, specify TRUE if there is a header row, FALSE if
+there is no header row.
+
+**Value**
+
+A string that represents the constructed CASE statement
+
+<br>
+***inlist()***
+
+**description**
+
+This function constructs a CASE WHEN THEN statement from a mapping CSV file or
+R dataframe It assumes that the first column of the data contains the original
+WHEN values, and the second column contains the THEN values (the values
+to be mapped to.)
+
+**Usage**
+
+inlist(inputfile=NULL, header=FALSE)
 
 **Arguments**
 
@@ -114,8 +143,8 @@ devtools::install_github("leosonh/sqlcaser")
 ```
 
 ## Acknowledgments
-Much thanks to a couple of my colleagues at Learning Collider, Nitya Raviprakash
-and Jasmin Dial, who provided healthy discussion around my misery of
+Much thanks to a couple of my colleagues at [Learning Collider](https://www.learningcollider.org/) - Nitya Raviprakash
+and Jasmin Dial - who provided healthy discussion around my misery of
 constructing long SQL queries. Credit is also due to Kevin Flerlage, whose
 efforts in automating this process in Excel should be commended and partially
 inspired this package.
