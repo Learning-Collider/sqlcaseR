@@ -109,6 +109,7 @@ there is no header row.
 A string that represents the constructed CASE statement
 
 <br>
+
 ***inlist()***
 
 **description**
