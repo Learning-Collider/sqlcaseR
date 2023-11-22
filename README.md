@@ -40,9 +40,10 @@ CASE WHEN 'Hotel/Motel' THEN 'Living in Shelter/Hotel/Motel'
  WHEN 'Homeless, Doubled-Up' THEN 'Doubled Up'
 ```
 
-As of version 0.1.3, the package also supports the creation of long SQL IN()
+As of version 0.2.0, the package also supports the creation of long SQL IN()
 lists via the *inlist()* function. This was inspired by reading about Kevin
-Flerlage's [Excel implementation](https://www.flerlagetwins.com/2020/09/in-operator-generator-case-statement.html).  
+Flerlage's [Excel implementation](https://www.flerlagetwins.com/2020/09/in-operator-generator-case-statement.html). 
+It also supports the creation of SQL UPDATE functions via the *updatetable()* method.
 
 ## Demonstration
 
