@@ -9,20 +9,24 @@
 #' FALSE if it does not include a header row.
 #' @return A string that represents the constructed CASE statement
 #' @export
+#' @examples 
+#'  input <- Data_Frame <- data.frame(Training = c("Strength", "Stamina",
+#'   "Other"))
+#'  result <- inlist(inputfile = input, header = TRUE)
 inlist <- function(inputfile = NULL, header = FALSE){
   if (is.null(inputfile) == TRUE) {
     stop("Please include a file path or an input dataframe.")
   }
-  if (class(inputfile)=="character") {
-    mapping <- read.csv(inputfile, header = header)
+  if (is.character(inputfile)) {
+    mapping <- utils::read.csv(inputfile, header = header)
   } else {
     mapping <- inputfile
   }
   statement <- paste("\nIN(", "'", mapping[1,1], "'", sep = "")
   for (i in 2:nrow(mapping)){
-    statement = paste(statement, ", ", "'", mapping[i, 1], "'", sep="")
+    statement <- paste(statement, ", ", "'", mapping[i, 1], "'", sep="")
   }
-  statement = paste(statement, ")\n", sep="")
+  statement <- paste(statement, ")\n", sep="")
   cat(statement)
   cat("\n")
   return(statement)

@@ -1,8 +1,8 @@
 # sqlcaseR
 ## sqlcaseR: A long CASE WHEN THEN statement constructor for SQL interfaces in R
-**Version 0.1.3**
+**Version 0.2.0**
 
-***Leoson Hoay <br>15 Jan 2023***
+***Leoson Hoay <br>21 Nov 2023***
 
 
 ## Introduction
@@ -109,15 +109,13 @@ there is no header row.
 A string that represents the constructed CASE statement
 
 <br>
-
 ***inlist()***
 
 **description**
 
-This function constructs a CASE WHEN THEN statement from a mapping CSV file or
-R dataframe It assumes that the first column of the data contains the original
-WHEN values, and the second column contains the THEN values (the values
-to be mapped to.)
+This function constructs a IN statement from a mapping CSV file or
+R dataframe. It assumes that the first column of the data contains the vector of
+values that the IN statement will check against.
 
 **Usage**
 
@@ -132,7 +130,31 @@ there is no header row.
 
 **Value**
 
-A string that represents the constructed CASE statement
+A string that represents the constructed IN statement.
+
+<br>
+***updatetable()***
+
+**description**
+
+This function constructs an UPDATE statement from a mapping CSV file or
+R dataframe. It assumes that the first column of the data contains the key column
+and the keys to be checked against, and assumes that the rest of columns 
+contain the columns and values to be updated into the table.
+
+**Usage**
+
+updatetable(inputfile=NULL, tablename=NULL)
+
+**Arguments**
+
+*inputfile* R dataframe or path to the mapping file
+
+*tablename* Name of the SQL table to be updated.
+
+**Value**
+
+A string that represents the constructed UPDATE statement.
 
 
 ## Installation

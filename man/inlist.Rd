@@ -20,3 +20,8 @@ This function constructs an IN statement from a mapping file or
 dataframe. It assumes that the first column of the data contains the
 list of values to check for.
 }
+\examples{
+ input <- Data_Frame <- data.frame(Training = c("Strength", "Stamina",
+  "Other"))
+ result <- inlist(inputfile = input, header = TRUE)
+}

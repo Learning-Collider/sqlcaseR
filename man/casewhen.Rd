@@ -21,3 +21,8 @@ dataframe. It assumes that the first column of the mapping data contains the
 original WHEN values, and the second column contains the THEN values (the
 values to be mapped to.)
 }
+\examples{
+ input <- Data_Frame <- data.frame(Training = c("Strength", "Stamina",
+  "Other"), Duration = c(60, 30, 45))
+ result <- casewhen(inputfile = input, header = TRUE)
+}

@@ -2,3 +2,4 @@
 
 export(casewhen)
 export(inlist)
+export(updatetable)

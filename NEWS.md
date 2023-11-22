@@ -1,4 +1,8 @@
 # *News*
+# sqlcaseR 0.2 (2023-11-21)
+
+* New function! updatetable() creates a SQL UPDATE...SET...WHERE query from a
+CSV file or dataframe that includes the values to be updated in the SQL table.
 
 # sqlcaseR 0.1.3 (2023-1-15)
 
